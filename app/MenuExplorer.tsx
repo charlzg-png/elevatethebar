@@ -4,69 +4,85 @@ import { useState } from "react";
 
 const sections = [
   {
-    id: "signatures", label: "Elevated", kicker: "Kava or mitra extract · $11",
+    id: "easy-start",
+    label: "Easy start",
+    note: "Familiar, bright, and easy to order",
     items: [
-      ["Mitra Mule", "A botanical take on the classic", "$11"],
-      ["Wild Berry Lemonade", "Wild berry, tart lemon, mitra extract", "$11"],
-      ["Pink Sunset", "Strawberry and grapefruit", "$11"],
-      ["Clear Skies", "Cucumber, lime, and mint", "$11"],
-      ["Passion", "Passionfruit and berries", "$11"],
-      ["Tulum", "Pineapple, habanero, and lime", "$11"],
+      ["Citrus + rosemary", "Fresh citrus, a light herbal finish, served over ice"],
+      ["Wild berry lemonade", "Berry flavor, tart lemon, and a clean finish"],
+      ["Peach + ginger", "Juicy peach with a little warmth and lift"],
+      ["Cucumber + lime", "Crisp, light, and built for an easy first order"],
     ],
   },
   {
-    id: "blended", label: "Blended", kicker: "Kava or mitra extract · $12",
+    id: "crafted",
+    label: "Crafted zero proof",
+    note: "Bar craft without the alcohol",
     items: [
-      ["Life + Longevity", "Passionfruit with vitamins A, C, and E", "$12"],
-      ["Berry Energetic", "Mixed berry, oatmilk, green tea, B vitamins", "$12"],
-      ["Just Peachy", "Peach, vitamin C, echinacea, and zinc", "$12"],
-      ["Use Your Noggin", "Piña colada-inspired cognitive blend", "$12"],
+      ["Tulum", "Pineapple, lime, and a touch of heat"],
+      ["Pink sunset", "Strawberry, grapefruit, and citrus"],
+      ["Passion", "Tropical fruit, berries, and a bright finish"],
+      ["Seasonal feature", "A rotating house drink inspired by the location"],
     ],
   },
   {
-    id: "specialty", label: "Specialty", kicker: "House originals · $8–12",
+    id: "botanical",
+    label: "Kava + botanical",
+    note: "Guided choices, explained clearly",
     items: [
-      ["Mango Sunrise", "Mango, grenadine, and mitra tea", "$8 / 10"],
-      ["Sweet Dreams", "Lavender lemonade with mitra tea", "$8 / 10"],
-      ["Twisted", "Kava, mitra tea, dragonfruit, lemonade", "$8 / 10"],
-      ["Joy", "Coconut-inspired with your choice of kava", "$10 / 12"],
-      ["Toasted", "A s’mores-inspired kava drink", "$10 / 12"],
-      ["Chai Kava", "Kava, chai, and creamer", "$10 / 12"],
+      ["Traditional kava", "A straightforward house pour with format options"],
+      ["Mitra tea", "House tea served simply or customized with flavor"],
+      ["Botanical on tap", "Ask a host about today's available flavors"],
+      ["House blend", "A location favorite with a clear ingredient story"],
     ],
   },
   {
-    id: "classics", label: "Classics", kicker: "The building blocks",
+    id: "cafe",
+    label: "Coffee + tea",
+    note: "For mornings, meetings, and the long day",
     items: [
-      ["Traditional Kava", "Mind, Body, or 50/50", "$4 / 8 / 10"],
-      ["Mitra Tea", "House brew: Red, Green, or White", "$6 / 8"],
-      ["Mitra9 on Tap", "Ask your tender for today’s flavors", "$10 / 14"],
-      ["Matcha Latte", "Smooth, earthy, and focused", "$6"],
-      ["Espresso", "Single or double", "$2 / 4"],
-      ["Latte", "Classic, oat, almond, or coconut", "$5"],
+      ["Espresso", "Single or double, served straight"],
+      ["Latte", "Classic, iced, or made with your preferred milk"],
+      ["Matcha", "Earthy, smooth, and available hot or iced"],
+      ["Tea", "A rotating selection for a simple, familiar visit"],
     ],
   },
 ];
 
 export function MenuExplorer() {
-  const [active, setActive] = useState("signatures");
+  const [active, setActive] = useState(sections[0].id);
   const section = sections.find((item) => item.id === active) ?? sections[0];
 
   return (
     <div className="menu-explorer">
       <div className="menu-tabs" role="tablist" aria-label="Drink menu categories">
         {sections.map((item, index) => (
-          <button key={item.id} type="button" role="tab" aria-selected={active === item.id} onClick={() => setActive(item.id)}>
-            <span>0{index + 1}</span>{item.label}
+          <button
+            key={item.id}
+            id={`tab-${item.id}`}
+            type="button"
+            role="tab"
+            aria-selected={active === item.id}
+            aria-controls={`panel-${item.id}`}
+            tabIndex={active === item.id ? 0 : -1}
+            onClick={() => setActive(item.id)}
+          >
+            <span>0{index + 1}</span>
+            {item.label}
           </button>
         ))}
       </div>
-      <div className="menu-panel" role="tabpanel">
-        <div className="menu-panel-head"><p>{section.kicker}</p><span>Available all day</span></div>
+      <div className="menu-panel" id={`panel-${section.id}`} role="tabpanel" aria-labelledby={`tab-${section.id}`}>
+        <div className="menu-panel-head"><p>{section.note}</p><span>Ask what is available today</span></div>
         <div className="menu-list">
-          {section.items.map(([name, note, price]) => (
-            <article key={name}><div><h3>{name}</h3><p>{note}</p></div><strong>{price}</strong></article>
+          {section.items.map(([name, description]) => (
+            <article key={name}>
+              <div><h3>{name}</h3><p>{description}</p></div>
+              <span aria-hidden="true">+</span>
+            </article>
           ))}
         </div>
+        <p className="menu-panel-note">Ingredients, formats, pricing, and availability may vary by location. Ask a host for current details.</p>
       </div>
     </div>
   );
