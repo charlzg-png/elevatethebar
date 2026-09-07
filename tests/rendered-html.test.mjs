@@ -28,7 +28,7 @@ test("renders the complete Elevate homepage", async () => {
   assert.match(html, /Partnerships \+ Private Events/i);
 });
 
-test("keeps the approved visual direction and real Elevate photography", async () => {
+test("keeps the approved visual direction and Elevate campaign photography", async () => {
   const [page, css] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -37,16 +37,16 @@ test("keeps the approved visual direction and real Elevate photography", async (
   assert.match(css, /--teal:\s*#087f80/i);
   assert.match(css, /--orange:\s*#f47b38/i);
   assert.match(css, /--white:\s*#ffffff/i);
-  assert.match(page, /elevate-bar-host\.png/);
-  assert.match(page, /elevate-team\.png/);
-  assert.match(page, /elevate-community\.png/);
-  assert.match(page, /elevate-guest\.png/);
+  assert.match(page, /elevate-hero-campaign\.jpg/);
+  assert.match(page, /elevate-first-visit\.jpg/);
+  assert.match(page, /elevate-community-campaign\.jpg/);
+  assert.match(page, /elevate-merch-campaign\.jpg/);
   assert.doesNotMatch(page, /\u2014/);
 
   await Promise.all([
-    access(new URL("../public/images/elevate-bar-host.png", import.meta.url)),
-    access(new URL("../public/images/elevate-team.png", import.meta.url)),
-    access(new URL("../public/images/elevate-community.png", import.meta.url)),
-    access(new URL("../public/images/elevate-guest.png", import.meta.url)),
+    access(new URL("../public/images/elevate-hero-campaign.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-first-visit.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-community-campaign.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-merch-campaign.jpg", import.meta.url)),
   ]);
 });

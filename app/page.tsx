@@ -90,7 +90,7 @@ export default function Home() {
           <div className="hero-visual">
             <div className="hero-sun" aria-hidden="true" />
             <div className="hero-image-wrap">
-              <img src="/images/elevate-bar-host.png" alt="A host presenting three colorful drinks inside Elevate Social Lounge" />
+              <img src="/images/elevate-hero-campaign.jpg" alt="An Elevate host presenting two colorful zero-proof drinks" />
             </div>
             <div className="hero-sticker">
               <span>NEW HERE?</span>
@@ -126,7 +126,7 @@ export default function Home() {
 
         <section className="first-visit" id="first-visit">
           <div className="first-visit-media">
-            <img src="/images/elevate-team.png" alt="An Elevate team member bringing energy behind the bar" />
+            <img src="/images/elevate-first-visit.jpg" alt="A host welcoming two guests and guiding them through the menu" />
             <div className="host-badge"><span>OUR PEOPLE MISSION</span><strong>Turn strangers into welcomed guests, and guests into community.</strong></div>
           </div>
           <div className="first-visit-content">
@@ -152,9 +152,9 @@ export default function Home() {
           </div>
           <MenuExplorer />
           <div className="drink-gallery">
-            <figure><img src="/images/hero.jpg" alt="A bright orange crafted drink with rosemary" /><figcaption><span>CRAFTED</span>Made to taste good first</figcaption></figure>
-            <figure><img src="/images/drink-one.jpg" alt="A peach drink served over ice" /><figcaption><span>CONSISTENT</span>Built to repeat across locations</figcaption></figure>
-            <figure><img src="/images/drink-two.jpg" alt="A layered citrus drink with lime" /><figcaption><span>DISCOVERABLE</span>Easy to choose, easy to understand</figcaption></figure>
+            <figure><img src="/images/elevate-drink-citrus.jpg" alt="A bright citrus drink with rosemary over ice" /><figcaption><span>CRAFTED</span>Made to taste good first</figcaption></figure>
+            <figure><img src="/images/elevate-drink-berry.jpg" alt="A deep berry and lime drink over ice" /><figcaption><span>CONSISTENT</span>Built to repeat across locations</figcaption></figure>
+            <figure><img src="/images/elevate-drink-espresso.jpg" alt="A creamy iced espresso-style drink with orange peel" /><figcaption><span>DISCOVERABLE</span>Easy to choose, easy to understand</figcaption></figure>
           </div>
         </section>
 
@@ -178,7 +178,7 @@ export default function Home() {
             <h2>The calendar is part<br />of the <em>experience.</em></h2>
             <p>Programming should give people a reason to return, meet someone new, and feel connected to the neighborhood.</p>
           </div>
-          <div className="community-photo"><img src="/images/elevate-community.png" alt="An Elevate guest holding a drink and community event tote" /></div>
+          <div className="community-photo"><img src="/images/elevate-community-campaign.jpg" alt="Friends connecting over colorful zero-proof drinks at Elevate" /></div>
           <div className="program-grid">
             {programs.map((program) => (
               <article key={program.title}><span>{program.number}</span><h3>{program.title}</h3><p>{program.copy}</p></article>
@@ -209,7 +209,7 @@ export default function Home() {
             <p>Useful objects, limited collaborations, and quiet signals for the community. Ask your local lounge about current drops.</p>
             <a className="text-link" href="#locations">Find your Elevate <Arrow /></a>
           </div>
-          <div className="merch-photo"><img src="/images/elevate-guest.png" alt="An Elevate guest relaxing with a drink" /><span>COMMUNITY, CARRIED FORWARD</span></div>
+          <div className="merch-photo"><img src="/images/elevate-merch-campaign.jpg" alt="A guest relaxing with a drink and Elevate-style merchandise" /><span>COMMUNITY, CARRIED FORWARD</span></div>
         </section>
 
         <section className="locations" id="locations">
