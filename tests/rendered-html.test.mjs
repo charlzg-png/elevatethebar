@@ -20,15 +20,16 @@ test("renders the complete Elevate homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /A Better Way to Go Out/i);
-  assert.match(html, /Functional drinks, real connection/i);
+  assert.match(html, /Meet me/i);
+  assert.match(html, /Zero-proof drinks/i);
   assert.match(html, /Maitland/i);
   assert.match(html, /Estero/i);
-  assert.match(html, /Your First Visit/i);
+  assert.match(html, /What(?:&apos;|')s on/i);
+  assert.match(html, /First visit/i);
   assert.match(html, /Partnerships \+ Private Events/i);
 });
 
-test("keeps the approved visual direction and Elevate campaign photography", async () => {
+test("keeps the approved visual direction and bar-first campaign photography", async () => {
   const [page, css] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -37,16 +38,20 @@ test("keeps the approved visual direction and Elevate campaign photography", asy
   assert.match(css, /--teal:\s*#087f80/i);
   assert.match(css, /--orange:\s*#f47b38/i);
   assert.match(css, /--white:\s*#ffffff/i);
-  assert.match(page, /elevate-hero-campaign\.jpg/);
+  assert.match(page, /elevate-evening-hero\.jpg/);
+  assert.match(page, /elevate-event-pool\.jpg/);
+  assert.match(page, /elevate-event-trivia\.jpg/);
+  assert.match(page, /elevate-event-live\.jpg/);
+  assert.match(page, /elevate-event-collab\.jpg/);
   assert.match(page, /elevate-first-visit\.jpg/);
-  assert.match(page, /elevate-community-campaign\.jpg/);
-  assert.match(page, /elevate-merch-campaign\.jpg/);
   assert.doesNotMatch(page, /\u2014/);
 
   await Promise.all([
-    access(new URL("../public/images/elevate-hero-campaign.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-evening-hero.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-event-pool.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-event-trivia.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-event-live.jpg", import.meta.url)),
+    access(new URL("../public/images/elevate-event-collab.jpg", import.meta.url)),
     access(new URL("../public/images/elevate-first-visit.jpg", import.meta.url)),
-    access(new URL("../public/images/elevate-community-campaign.jpg", import.meta.url)),
-    access(new URL("../public/images/elevate-merch-campaign.jpg", import.meta.url)),
   ]);
 });
