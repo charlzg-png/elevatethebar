@@ -27,6 +27,21 @@ test("renders the complete Elevate homepage", async () => {
   assert.match(html, /What(?:&apos;|')s on/i);
   assert.match(html, /First visit/i);
   assert.match(html, /Partnerships \+ Private Events/i);
+  assert.match(html, /Website concept preview/);
+  assert.match(html, /AI-generated concept imagery/);
+  assert.match(html, /Kava \+ kratom/);
+  assert.match(html, /noindex/);
+  assert.doesNotMatch(html, /info@elevatesociallounge.com/);
+  assert.doesNotMatch(html, /Wild berry lemonade|Pink sunset/);
+});
+
+test("all local image references resolve and guidance supports keyboard navigation", async () => {
+  const html = await (await render()).text();
+  const images = [...html.matchAll(/src="(\/[^"?]+\.(?:png|jpg|webp))"/g)];
+  await Promise.all(images.map((match) => access(new URL(`../public${match[1]}`, import.meta.url))));
+  const menu = await readFile(new URL('../app/MenuExplorer.tsx', import.meta.url), 'utf8');
+  for (const key of ['ArrowRight', 'ArrowLeft', 'Home', 'End']) assert.ok(menu.includes(key));
+  assert.match(menu, /hidden=\{active !== index\}/);
 });
 
 test("keeps the approved visual direction and bar-first campaign photography", async () => {

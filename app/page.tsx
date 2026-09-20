@@ -1,65 +1,41 @@
 import { MenuExplorer } from "./MenuExplorer";
-
-const locations = [
-  {
-    city: "Maitland",
-    note: "Your all-day social reset",
-    address: "400 N Orlando Ave, Unit 109A, Maitland, FL 32751",
-    displayAddress: <>400 N Orlando Ave, Unit 109A<br />Maitland, FL 32751</>,
-    phone: "407 706 7127",
-    phoneHref: "+14077067127",
-    directions: "https://maps.google.com/?q=400+N+Orlando+Ave+Unit+109A+Maitland+FL+32751",
-    order: "https://www.toasttab.com/elevate-1-400-n-orlando-avenue",
-    instagram: "https://www.instagram.com/elevatesociallounge/",
-  },
-  {
-    city: "Estero",
-    note: "Your neighborhood living room",
-    address: "10952 Eagle Village Dr, Unit D-460, Fort Myers, FL 33913",
-    displayAddress: <>10952 Eagle Village Dr, Unit D-460<br />Fort Myers, FL 33913</>,
-    phone: "239 257 1260",
-    phoneHref: "+12392571260",
-    directions: "https://maps.google.com/?q=10952+Eagle+Village+Dr+Unit+D-460+Fort+Myers+FL+33913",
-    order: null,
-    instagram: "https://www.instagram.com/elevateestero/",
-  },
-];
+import { locations } from "../content/locations";
 
 const events = [
   {
     category: "PLAY",
-    title: "Pool nights",
-    copy: "Friendly brackets, good music, and room for new players.",
+    title: "A little friendly competition",
+    copy: "Find local game nights and see what is happening at your lounge.",
     image: "/images/elevate-event-pool.jpg",
-    alt: "Guests playing pool during an evening at Elevate",
+    alt: "Concept image of a social pool night, not a photograph of a confirmed event",
   },
   {
     category: "THINK",
-    title: "Trivia social",
-    copy: "Bring a team or meet one here. The bar stays active between rounds.",
+    title: "Bring your people",
+    copy: "Ask about group games and upcoming trivia at your location.",
     image: "/images/elevate-event-trivia.jpg",
-    alt: "Teams taking part in trivia night at Elevate",
+    alt: "Concept image showing the atmosphere of a trivia gathering",
   },
   {
     category: "LISTEN",
-    title: "Live sessions",
-    copy: "Local DJs, musicians, and intimate sets built for the room.",
+    title: "Find the local rhythm",
+    copy: "Music and programming should fit the room. Check the local lineup.",
     image: "/images/elevate-event-live.jpg",
-    alt: "A live DJ and percussion session at Elevate",
+    alt: "Concept image of an intimate music session, not an announced performance",
   },
   {
     category: "COLLAB",
-    title: "Limited drops",
-    copy: "Guest drinks, local partners, merchandise, and one-night ideas.",
+    title: "Something to build together",
+    copy: "Have a local collaboration in mind? Start a conversation with the team.",
     image: "/images/elevate-event-collab.jpg",
-    alt: "A beverage and merchandise collaboration night at Elevate",
+    alt: "Concept image exploring a beverage and merchandise collaboration",
   },
 ];
 
 const firstVisitSteps = [
   { number: "01", title: "Start with flavor", copy: "Tell us what you usually like. Sweet, tart, bright, creamy, or simple." },
   { number: "02", title: "Let us guide you", copy: "We will explain the formats and ingredients clearly, without the lecture." },
-  { number: "03", title: "Find your spot", copy: "Grab the bar, the pool table, a lounge seat, or a quieter corner." },
+  { number: "03", title: "Find your spot", copy: "Come solo or bring friends. Ask your host where you can settle in." },
 ];
 
 function Arrow() {
@@ -79,6 +55,7 @@ export default function Home() {
   return (
     <main id="top" className="bar-site">
       <a className="skip-link" href="#main-content">Skip to content</a>
+      <div className="preview-notice">Website concept preview <span>For current menus, hours, and events, check your lounge.</span><a href="#locations">Location links ↗</a></div>
 
       <header className="site-header bar-header">
         <a className="brand-link" href="#top" aria-label="Elevate Social Lounge home"><Brand light /></a>
@@ -93,12 +70,12 @@ export default function Home() {
 
       <div id="main-content">
         <section className="bar-hero">
-          <img className="bar-hero-image" src="/images/elevate-evening-hero.jpg" alt="A lively evening around the bar and pool table at Elevate" />
+          <img className="bar-hero-image" src="/images/elevate-evening-hero.jpg" alt="Concept image of a warm, lively alcohol-free social lounge" fetchPriority="high" />
           <div className="bar-hero-shade" />
           <div className="bar-hero-content">
             <p className="bar-kicker"><span /> Maitland + Estero, Florida</p>
             <h1>Meet me<br />at <em>Elevate.</em></h1>
-            <p>Zero-proof drinks. Full bar energy. Good people, late hours, and something happening in the room.</p>
+            <p>Zero-proof drinks. Full bar energy. Pull up a seat, find your people, and make the night your own.</p>
             <div className="bar-hero-actions">
               <a className="button bar-button-light" href="#events">See what&apos;s on <span aria-hidden="true">↓</span></a>
               <a className="button bar-button-ghost" href="#menu">Explore the drinks <Arrow /></a>
@@ -115,22 +92,22 @@ export default function Home() {
         </section>
 
         <div className="bar-marquee" aria-label="Elevate experience statement">
-          <div>ZERO PROOF <span>◆</span> FULL NIGHT OUT <span>◆</span> POOL <span>◆</span> TRIVIA <span>◆</span> LIVE SESSIONS <span>◆</span> GOOD PEOPLE <span>◆</span></div>
+          <div>ZERO PROOF <span>◆</span> FULL NIGHT OUT <span>◆</span> COME AS YOU ARE <span>◆</span> GOOD PEOPLE <span>◆</span> LOCAL ENERGY <span>◆</span></div>
         </div>
 
         <section className="bar-events" id="events">
           <div className="bar-section-head">
             <div><p className="bar-kicker dark">WHAT&apos;S ON</p><h2>Come for a drink.<br /><em>Stay for the night.</em></h2></div>
             <div className="bar-section-intro">
-              <p>The calendar gives every visit a different energy. Pool, trivia, live sessions, local collaborations, and more.</p>
-              <small>Programming and schedules vary by location. Check the local Instagram before you go.</small>
+              <p>Different rooms. Different regulars. A local calendar that makes each lounge its own.</p>
+              <small>Explore the possibilities below. These are concept scenes, not scheduled events. Confirm dates and details on each lounge&apos;s Instagram.</small>
             </div>
           </div>
 
           <div className="bar-event-grid">
             {events.map((event, index) => (
               <article className="bar-event-card" key={event.title}>
-                <img src={event.image} alt={event.alt} />
+                <img src={event.image} alt={event.alt} loading="lazy" decoding="async" />
                 <div className="bar-event-gradient" />
                 <div className="bar-event-copy">
                   <div><span>{event.category}</span><span>0{index + 1}</span></div>
@@ -142,7 +119,7 @@ export default function Home() {
           </div>
 
           <div className="bar-event-actions">
-            <p>Find confirmed events, times, and location details.</p>
+            <p>See the latest posts. Confirm the date and location before you go.</p>
             <div>
               <a className="button button-primary" href="https://www.instagram.com/elevatesociallounge/" target="_blank" rel="noreferrer">Maitland lineup <Arrow /></a>
               <a className="button button-outline" href="https://www.instagram.com/elevateestero/" target="_blank" rel="noreferrer">Estero lineup <Arrow /></a>
@@ -152,22 +129,23 @@ export default function Home() {
 
         <section className="bar-menu" id="menu">
           <div className="bar-menu-heading">
-            <div><p className="bar-kicker">AT THE BAR</p><h2>Order by flavor.<br /><em>We&apos;ll handle the rest.</em></h2></div>
+            <div><p className="bar-kicker">AT THE BAR</p><h2>Find your flavor.<br /><em>Know your drink.</em></h2></div>
             <p>Familiar flavors, crafted presentation, and clear guidance. Ask a host about ingredients, formats, and what is available today.</p>
           </div>
 
           <div className="bar-drink-gallery">
-            <figure><img src="/images/elevate-drink-citrus.jpg" alt="A bright citrus drink with rosemary over ice" /><figcaption><span>BRIGHT</span>Citrus + rosemary</figcaption></figure>
-            <figure><img src="/images/elevate-drink-berry.jpg" alt="A deep berry and lime drink over ice" /><figcaption><span>BOLD</span>Berry + lime</figcaption></figure>
-            <figure><img src="/images/elevate-drink-espresso.jpg" alt="A creamy iced espresso-style drink with orange peel" /><figcaption><span>SMOOTH</span>Iced espresso</figcaption></figure>
+            <figure><img src="/images/elevate-drink-citrus.jpg" alt="Concept citrus drink photography" loading="lazy" decoding="async" /><figcaption><span>BRIGHT</span>Citrus inspiration</figcaption></figure>
+            <figure><img src="/images/elevate-drink-berry.jpg" alt="Concept berry drink photography" loading="lazy" decoding="async" /><figcaption><span>BOLD</span>Berry inspiration</figcaption></figure>
+            <figure><img src="/images/elevate-drink-espresso.jpg" alt="Concept creamy iced drink photography" loading="lazy" decoding="async" /><figcaption><span>SMOOTH</span>Creamy inspiration</figcaption></figure>
           </div>
+          <p className="image-disclosure">Drink images show the creative direction. They are not a list of items available to order.</p>
 
           <MenuExplorer />
         </section>
 
         <section className="bar-first-visit" id="first-visit">
           <div className="bar-first-image">
-            <img src="/images/elevate-first-visit.jpg" alt="A host welcoming two guests and guiding them through the menu" />
+            <img src="/images/elevate-first-visit.jpg" alt="Concept image of a host welcoming two guests at the bar" loading="lazy" decoding="async" />
             <span>FIRST TIME? SIT AT THE BAR.</span>
           </div>
           <div className="bar-first-copy">
@@ -186,7 +164,7 @@ export default function Home() {
           <div><img src="/elevate-mark-white.png" alt="" /></div>
           <blockquote>“A real night out does not need alcohol at the center of it.”</blockquote>
           <div className="bar-promise-points">
-            <p><span>01</span><strong>Well made</strong>Crafted drinks, good ice, good water, and a final check.</p>
+            <p><span>01</span><strong>Clear choices</strong>Ask about the flavor, ingredients, serving information, and price.</p>
             <p><span>02</span><strong>Welcoming</strong>Fast acknowledgment, clear guidance, and no insider attitude.</p>
             <p><span>03</span><strong>Alive</strong>Music, lighting, service, and programming move with the room.</p>
           </div>
@@ -202,13 +180,13 @@ export default function Home() {
               <article className="location-card" key={location.city}>
                 <div className="location-top"><span>0{index + 1}</span><p>{location.note}</p></div>
                 <h3>{location.city}</h3>
-                <address aria-label={location.address}>{location.displayAddress}</address>
-                <p className="open-daily">OPEN DAILY <span>Check local channels for today&apos;s hours and events</span></p>
-                <a className="phone" href={`tel:${location.phoneHref}`}>{location.phone}</a>
+                <address>{location.address}</address>
+                <p className="open-daily">PLAN YOUR VISIT <span>Check with the lounge for today&apos;s hours, menu, and events.</span></p>
+                {location.phone && <a className="phone" href={`tel:${location.phoneHref}`}>{location.phone}</a>}
                 <div className="location-actions">
                   <a className="button button-primary" href={location.directions} target="_blank" rel="noreferrer">Directions <Arrow /></a>
-                  {location.order && <a href={location.order} target="_blank" rel="noreferrer">Order ahead <Arrow /></a>}
-                  <a href={location.instagram} target="_blank" rel="noreferrer">Instagram <Arrow /></a>
+                  {location.menu && <a href={location.menu} target="_blank" rel="noreferrer">Location menu <Arrow /></a>}
+                  <a href={location.instagram} target="_blank" rel="noreferrer">{location.menu ? "Local updates" : "Menu + local updates"} <Arrow /></a>
                 </div>
               </article>
             ))}
@@ -217,7 +195,7 @@ export default function Home() {
 
         <section className="bar-private">
           <div><p className="bar-kicker">PARTNERSHIPS + PRIVATE EVENTS</p><h2>Your idea.<br /><em>Our room.</em></h2></div>
-          <div><p>Bring Elevate a local collaboration, private gathering, creator event, tasting, or community idea that belongs in the room.</p><a className="button bar-button-light" href="mailto:info@elevatesociallounge.com?subject=Elevate%20event%20or%20partnership">Start a conversation <Arrow /></a></div>
+          <div><p>Have a gathering or collaboration in mind? Talk to your location about the idea, space, timing, and what is possible.</p><a className="button bar-button-light" href="#locations">Talk to your lounge <Arrow /></a></div>
         </section>
       </div>
 
@@ -225,6 +203,7 @@ export default function Home() {
         <div className="footer-top"><Brand light /><p>Functional drinks, real bar energy, and a room built for connection.</p></div>
         <div className="footer-nav"><a href="#events">What&apos;s on</a><a href="#menu">Drinks</a><a href="#first-visit">First visit</a><a href="#locations">Locations</a></div>
         <div className="footer-bottom"><span>© 2026 Elevate Social Lounge</span><span>Maitland + Estero, Florida</span><span>Ask a host about ingredients. Elevate does not provide medical advice.</span></div>
+        <p className="concept-footer">This preview uses AI-generated concept imagery. It does not document actual guests, events, or the exact layout of either location. Visit the <a href="https://www.elevatesociallounge.com/" target="_blank" rel="noreferrer">current Elevate website</a> or contact your lounge for current information.</p>
       </footer>
     </main>
   );
