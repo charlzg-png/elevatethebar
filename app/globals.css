@@ -1905,6 +1905,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-top: 58px;
+  padding-bottom: 28px;
 }
 
 .bar-drink-gallery figure {
@@ -2223,6 +2224,7 @@ footer {
 
   .bar-drink-gallery {
     grid-template-columns: 1fr;
+    padding-bottom: 0;
   }
 
   .bar-drink-gallery figure,
