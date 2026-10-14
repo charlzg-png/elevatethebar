@@ -1,0 +1,26 @@
+ELEVATE VISUAL IDENTITY / PROPOSED v0.8 / 13 OCTOBER 2026
+
+This package is a design proposal. It is not a production or trademark approval.
+20 SVGs: horizontal, stacked, wordmark, symbol and micro, each in teal, orange,
+ink and white. SVGs contain outlined paths, with no linked font dependency.
+
+The ELEVATE wordmark is custom-drawn lettering, not a complete typeface.
+The descriptor is outlined DM Sans. DM Sans font and SIL OFL 1.1 license are
+included. Keep the copyright and license with redistributed font software.
+Do not claim exclusive rights to DM Sans. Trademark/name rights remain separate.
+
+White #FFFFFF / Deep teal #087F80 / Warm orange #F39A3B / Ink #173536.
+Use white on teal, ink on white, or ink on orange for ordinary text.
+Do not use white on orange for readable copy. No gradients or added effects.
+
+Keep proportions and original paths. Clear space: at least half the wordmark
+cap height around full lockups, or one quarter symbol height around symbols.
+Use the micro icon for small applications. Confirm actual size with a proof.
+Physical production requires vendor samples and brand approval.
+
+Mockups on the guide illustrate direction, not available merchandise or
+verified store installations. Do not use AI mockups as master logo artwork.
+Do not replace signs, order stock or change live brand assets without approval.
+
+Guide: https://elevate.gdpbros.com/visual-guidelines/
+Font source: https://github.com/google/fonts/tree/main/ofl/dmsans

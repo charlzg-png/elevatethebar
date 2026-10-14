@@ -1,0 +1,128 @@
+{
+  "version": "0.8",
+  "status": "Proposed. Not production approved.",
+  "wordmark": "Custom drawn vector lettering. Not a complete typeface.",
+  "descriptor": "Outlined DM Sans, SIL Open Font License 1.1.",
+  "assets": [
+    {
+      "file": "elevate-horizontal-teal.svg",
+      "format": "horizontal",
+      "color": "#087F80",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-stacked-teal.svg",
+      "format": "stacked",
+      "color": "#087F80",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-wordmark-teal.svg",
+      "format": "wordmark",
+      "color": "#087F80",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-symbol-teal.svg",
+      "format": "symbol",
+      "color": "#087F80",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-micro-teal.svg",
+      "format": "micro",
+      "color": "#087F80",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-horizontal-orange.svg",
+      "format": "horizontal",
+      "color": "#F39A3B",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-stacked-orange.svg",
+      "format": "stacked",
+      "color": "#F39A3B",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-wordmark-orange.svg",
+      "format": "wordmark",
+      "color": "#F39A3B",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-symbol-orange.svg",
+      "format": "symbol",
+      "color": "#F39A3B",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-micro-orange.svg",
+      "format": "micro",
+      "color": "#F39A3B",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-horizontal-ink.svg",
+      "format": "horizontal",
+      "color": "#173536",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-stacked-ink.svg",
+      "format": "stacked",
+      "color": "#173536",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-wordmark-ink.svg",
+      "format": "wordmark",
+      "color": "#173536",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-symbol-ink.svg",
+      "format": "symbol",
+      "color": "#173536",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-micro-ink.svg",
+      "format": "micro",
+      "color": "#173536",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-horizontal-white.svg",
+      "format": "horizontal",
+      "color": "#FFFFFF",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-stacked-white.svg",
+      "format": "stacked",
+      "color": "#FFFFFF",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-wordmark-white.svg",
+      "format": "wordmark",
+      "color": "#FFFFFF",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-symbol-white.svg",
+      "format": "symbol",
+      "color": "#FFFFFF",
+      "status": "Proposed v0.8"
+    },
+    {
+      "file": "elevate-micro-white.svg",
+      "format": "micro",
+      "color": "#FFFFFF",
+      "status": "Proposed v0.8"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "version": "0.8",
+  "status": "Proposed; not production approved",
+  "colors": {"white": "#FFFFFF", "teal": "#087F80", "orange": "#F39A3B", "ink": "#173536"},
+  "font": {"family": "DM Sans", "license": "SIL Open Font License 1.1", "weights": {"body": 400, "label": 500, "heading": 700}},
+  "wordmark": "Custom vector lettering. Use supplied paths, not retyped text.",
+  "contrast": {"whiteOnTeal": 4.82, "inkOnOrange": 5.94, "inkOnWhite": 13.13},
+  "print": "Physical proofs required. No Pantone or CMYK equivalence has been approved."
+}
